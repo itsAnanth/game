@@ -1,5 +1,5 @@
 import type { Message as IMessage, DeflatedMessage } from '../types/Message';
-import { decode, encode as _encode } from 'msgpack-lite';
+import { decode, encode as encode } from 'msgpack-lite';
 import { MessageType } from './MessageType';
 
 interface Message extends IMessage {};
@@ -34,7 +34,7 @@ class Message {
     }
 
     static encode(data: Message): Buffer {
-        return _encode(Message.deflate(data));
+        return encode(Message.deflate(data));
     }
 
     static safeSend(send: WebSocket['send']) {
@@ -50,8 +50,8 @@ class Message {
 
 }
 
-const ping = _encode([MessageType.PING]);
-const pong = _encode([MessageType.PONG]);
+const ping = encode([MessageType.PING]);
+const pong = encode([MessageType.PONG]);
 
 export default Message;
 export { Message, ping, pong };

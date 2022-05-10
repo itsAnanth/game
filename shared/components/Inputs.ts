@@ -15,11 +15,11 @@ class Inputs {
     }
 
     clone() {
-        const clone = this.constructor();
+        const clone = new Inputs();
 
         for (const [k, v] of Object.entries(this)) {
             if (!['boolean', 'number'].includes(typeof v)) continue;
-            Object.defineProperty(clone, k, v);
+            Object.defineProperty(clone, k, { value: v });
         }
 
         return clone;

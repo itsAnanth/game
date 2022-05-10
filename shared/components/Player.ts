@@ -43,7 +43,7 @@ class Player {
 
             const factor = amount / currentSpeed;
 
-            this.velocity.multiply(0.85);
+            this.velocity.multiply(0.85); // 0.85
 
         }
 
@@ -57,6 +57,13 @@ class Player {
 
         this.position.add(Vector.multiply(this.velocity, delta));
         
+    }
+
+    serialize() {
+        return {
+            position: { x: this.position.x, y: this.position.y },
+            velocity: { x: this.velocity.x, y: this.velocity.y }
+        }
     }
 }
 

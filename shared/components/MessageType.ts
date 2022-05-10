@@ -6,6 +6,7 @@ enum MessageType {
     LEAVE,
     INPUTS,
     UPDATE,
+    WORLDUPDATE,
     PING,
     PONG
 }

@@ -46,9 +46,11 @@ class Vector {
      * equation -> sqart(square of x component + square of y component)
      */
     magnitude() {
-        return Math.sqrt(this.x ** 2 + this.y ** 2);
+        let max = Math.max(this.x, this.y);
+        let min = Math.min(this.x, this.y);
+        let r = min / (max === 0 ? 1 : max);
+        return max * Math.sqrt(1 + r * r);
     }
-
     /**
      * returns the normal vector
      */

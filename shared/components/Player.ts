@@ -27,21 +27,13 @@ class Player {
 
         const acceleration = 400;
         const maxSpeed = 500;
-        const friction = 50;
 
         const currentSpeed = Math.hypot(this.velocity.x, this.velocity.y);
 
+        // console.log(this.velocity.magnitude())
+
         if (currentSpeed > 0) {
-
-            let amount = currentSpeed - friction * delta;
-
-            if (amount < 0) 
-
-                amount = 0;
-
-            
-
-            const factor = amount / currentSpeed;
+            // friction
 
             this.velocity.multiply(0.85); // 0.85
 
@@ -61,8 +53,8 @@ class Player {
 
     serialize() {
         return {
-            position: { x: this.position.x, y: this.position.y },
-            velocity: { x: this.velocity.x, y: this.velocity.y }
+            position: this.position.serialize(),
+            velocity: this.velocity.serialize()
         }
     }
 }

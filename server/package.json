@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uWebSockets.js": "github:itsAnanth/uWebSockets.js#v20.5.0"
+    "uWebSockets.js": "github:Jytesh/uWebSockets.js#v20.5.0"
   }
 }

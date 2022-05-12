@@ -31,6 +31,16 @@ class Vector {
         return this;
     }
 
+    setXY({ x, y }: { x: number, y: number }) {
+        this.x = x;
+        this.y = y;
+        return this;
+    }
+
+    serialize() {
+        return { x: this.x, y: this.y };
+    }
+
     /**
      * Get magnitude of a vecotr
      * equation -> sqart(square of x component + square of y component)

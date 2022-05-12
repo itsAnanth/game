@@ -8,7 +8,10 @@
     "prepare": "husky install",
     "lint": "npx eslint . --ext .ts --fix",
     "start:server": "cd server && ts-node index.ts",
-    "start:client": "cd client && vite"
+    "start:client": "cd client && vite",
+    "heroku-install": "npm install -g pnpm && pnpm install",
+    "build": "cd client && pnpm build",
+    "heroku-postbuild": "npm install -g pnpm && pnpm install && cd ./server && pnpm install && pnpm build"
   },
   "repository": {
     "type": "git",

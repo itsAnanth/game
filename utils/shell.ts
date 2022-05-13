@@ -28,11 +28,9 @@ for (let i = 0; i < cmds.length; i++) {
 
     child.on('close', (code) => {
         (code > 0) ?
-            console.error(`${cmds[i]} failed with exit code ${code}`)
+            (console.error(`${cmds[i]} failed with exit code ${code}`), close(code))
             :
             console.log(`${cmds[i]} ended successfully`);
-
-        (code > 0) && close(code);
     })
 
     child.cmd = cmds[i];

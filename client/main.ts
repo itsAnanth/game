@@ -20,7 +20,7 @@ new AnimationFrame(60, animate).start();
 function init() {
     client = new Client();
     client.connect(window.location.href);
-    (process.env.DEV) && (window.client = client);
+    (process.env.NODE_ENV === 'dev') && (window.client = client);
 }
 
 window.addEventListener('keydown', client.registerKeys.bind(client));

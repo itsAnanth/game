@@ -2,11 +2,12 @@
   "name": "game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./utils/shell.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "lint": "npx eslint . --ext .ts --fix",
+    "start": "ts-node ./utils/shell.ts",
     "start:server": "cd server && ts-node index.ts",
     "start:client": "cd client && vite",
     "heroku-install": "npm install -g pnpm && pnpm install",
